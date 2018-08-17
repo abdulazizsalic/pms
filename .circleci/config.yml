@@ -2,24 +2,24 @@ version: 2
 jobs:
   build:
     docker:
-        - image: samueldebruyn/debian-git
+      - image: samueldebruyn/debian-git
       
     working_directory: ~/repo
 
     steps:
-        - checkout
-        - deploy:
-            name: Deploy to host if b ranch is master
-            command: |
-                if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                  apt-get update
-                  apt-get -qq install git-ftp
-                  echo "'_$(git status -uno --porcelain | wc -l)_'"
-                  git status -uno --porcelain
-                  echo "Initiating push site ${FTP_HOST}..." 
-                  git config git-ftp.syncroot .
-                  git ftp push --user "${FTP_USER}" --passwd "${FTP_PASSWORD}" ${FTP_HOST} 
-                  #git ftp init should be changed to git ftp push after first deploy
-                else
-                  echo "Not master branch so not deploying"
-                fi
+      - checkout
+      - deploy:
+        name: Deploy to host if branch is master
+        command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              apt-get update
+              apt-get -qq install git-ftp
+              echo "'_$(git status -uno --porcelain | wc -l)_'"
+              git status -uno --porcelain
+              echo "Initiating push site ${FTP_HOST}..." 
+              git config git-ftp.syncroot .
+              git ftp push --user "${FTP_USER}" --passwd "${FTP_PASSWORD}" ${FTP_HOST} 
+              #git ftp init should be changed to git ftp push after first deploy
+            else
+              echo "Not master branch so not deploying"
+            fi
