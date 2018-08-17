@@ -1,6 +1,5 @@
 <style type="text/css">
   @media (max-width: 991px) {
-
     #lname {
       margin-top: 200px;
     }
@@ -11,6 +10,7 @@
       margin-top: -300px;
     }
   }
+
 </style>
 <div class="row page-titles">
   <div class="col-md-6 col-8 align-self-center">
@@ -41,13 +41,11 @@
           <div class="col-lg-7 col-md-12">
             <div class="form-group" id="lname">
               <?php echo form_label('Last Name', 'last_name', array('class' => 'col-form-label')); ?>
-              <?php echo form_input('last_name', '', 'class="form-control"'); ?>
-               <div class="invalid-feedback">
-                  Input lastname
-               </div>
-                
+              <?php echo form_input('last_name', '', 'class="typehead form-control"'); ?>
+              <div class="invalid-feedback">
+                Input lastname
+              </div>
             </div>
-
           </div>
           <div class="col-lg-5 col-md-8">
             <div class="form-group" id="adate">
@@ -57,24 +55,21 @@
                 <div class="input-group-append">
                   <span class="input-group-text"><i class="icon-calender"></i></span>
                 </div>
-                  <div class="invalid-feedback">
+                <div class="invalid-feedback">
                   Input Date of Arrival
-               </div>
-                
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="col-lg-7 col-md-12">
             <div class="form-group" id="fname">
               <?php echo form_label('First Name', 'first_name', array('class' => 'col-form-label')); ?>
               <?php echo form_input('first_name', '', 'class="form-control"'); ?>
-                <div class="invalid-feedback">
-                   Input firstname
-               </div>
-              
+              <div class="invalid-feedback">
+                Input firstname
+              </div>
             </div>
           </div>
           <div class="col-lg-5 col-md-8">
@@ -85,34 +80,30 @@
                 <div class="input-group-append">
                   <span class="input-group-text"><i class="icon-calender"></i></span>
                 </div>
-                  <div class="invalid-feedback">
-                   Input Departure Date
-               </div>
-               
+                <div class="invalid-feedback">
+                  Input Departure Date
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="col-md-6">
             <div class="form-group" id="roooms">
               <?php echo form_label('# of Rooms', 'no_of_rooms', array('class' => 'col-form-label')); ?>
               <?php echo form_input('no_of_rooms', '', 'class="form-control"'); ?>
-                <div class="invalid-feedback">
-                   Input number of Rooms
-               </div>
-               
+              <div class="invalid-feedback">
+                Input number of Rooms
+              </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <?php echo form_label('Room Category', 'room_category', array('class' => 'col-form-label')); ?>
               <?php echo form_dropdown('room_category', room_categories(),'', 'class="form-control"'); ?>
-                <div class="invalid-feedback">
-                   Input room category
-               </div>
-              
+              <div class="invalid-feedback">
+                Input room category
+              </div>
             </div>
           </div>
         </div>
@@ -121,20 +112,18 @@
             <div class="form-group">
               <?php echo form_label('Email Address', 'email', array('class' => 'col-form-label')); ?>
               <?php echo form_input('email', '', 'class="form-control"'); ?>
-                <div class="invalid-feedback">
-                   Input valid email 
-               </div>
-             
+              <div class="invalid-feedback">
+                Input valid email
+              </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <?php echo form_label('Mobile Number', 'mobile', array('class' => 'col-form-label')); ?>
               <?php echo form_input('mobile', '', 'class="form-control"'); ?>
-                <div class="invalid-feedback">
-                   Input mobile number
-               </div>
-               
+              <div class="invalid-feedback">
+                Input mobile number
+              </div>
             </div>
           </div>
         </div>
@@ -160,68 +149,40 @@
 <?php echo form_close(); ?>
 
 <script type="text/javascript">
-$(window).resize(function () {
+  $(window).resize(function() {
     var $containerHeight = $(window).width();
     if ($containerHeight < 501) {
-     $("#adate").css("margin-bottom","100px");
-     $("#ddate").css("margin-top","-300px");
-     $("#roooms").css("margin-top","100px");
-
-    $(".row").switchClass("row","resize");
-
-       }
-
-
-       else if($containerHeight > 501 && $containerHeight < 991)
-    {
-      $(".resize").switchClass("resize","row");
-
-      $("#roooms").css("margin-top","0");
-       $("#adate").css("margin-bottom","0");
-       $("#ddate").css("margin-top","-300px");
-
+      $("#adate").css("margin-bottom", "100px");
+      $("#ddate").css("margin-top", "-300px");
+      $("#roooms").css("margin-top", "100px");
+      $(".row").switchClass("row", "resize");
+    } else if ($containerHeight > 501 && $containerHeight < 991) {
+      $(".resize").switchClass("resize", "row");
+      $("#roooms").css("margin-top", "0");
+      $("#adate").css("margin-bottom", "0");
+      $("#ddate").css("margin-top", "-300px");
+    } else {
+      $("#roooms").css("margin-top", "0");
+      $("#adate").css("margin-bottom", "0");
+      $("#ddate").css("margin-top", "0");
     }
-    else
-    {
-
-      $("#roooms").css("margin-top","0");
-       $("#adate").css("margin-bottom","0");
-       $("#ddate").css("margin-top","0");
-
-
-    }
-});
-$(window).ready(function () {
+  });
+  $(window).ready(function() {
     var $containerHeight = $(window).width();
     if ($containerHeight < 501) {
-     $("#adate").css("margin-bottom","100px");
-     $("#ddate").css("margin-top","-300px");
-     $("#roooms").css("margin-top","100px");
-
-    $(".row").switchClass("row","resize");
-
-       }
-       else if($containerHeight > 501 && $containerHeight < 991)
-    {
-      $(".resize").switchClass("resize","row");
-
-      $("#roooms").css("margin-top","0");
-       $("#adate").css("margin-bottom","0");
-       $("#ddate").css("margin-top","-300px");
-
+      $("#adate").css("margin-bottom", "100px");
+      $("#ddate").css("margin-top", "-300px");
+      $("#roooms").css("margin-top", "100px");
+      $(".row").switchClass("row", "resize");
+    } else if ($containerHeight > 501 && $containerHeight < 991) {
+      $(".resize").switchClass("resize", "row");
+      $("#roooms").css("margin-top", "0");
+      $("#adate").css("margin-bottom", "0");
+      $("#ddate").css("margin-top", "-300px");
+    } else {
+      $("#roooms").css("margin-top", "0");
+      $("#adate").css("margin-bottom", "0");
+      $("#ddate").css("margin-top", "0");
     }
-    else
-    {
-
-      $("#roooms").css("margin-top","0");
-       $("#adate").css("margin-bottom","0");
-       $("#ddate").css("margin-top","0");
-
-
-    }
-
-
-})
-
-
+  })
 </script>
