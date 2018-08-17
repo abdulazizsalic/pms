@@ -10,7 +10,6 @@
       margin-top: -300px;
     }
   }
-
 </style>
 <div class="row page-titles">
   <div class="col-md-6 col-8 align-self-center">
@@ -39,9 +38,9 @@
         <h4 class="card-title">General Information</h4>
         <div class="row">
           <div class="col-lg-7 col-md-12">
-            <div class="form-group" id="lname">
+            <div class="form-group" id="last_name">
               <?php echo form_label('Last Name', 'last_name', array('class' => 'col-form-label')); ?>
-              <?php echo form_input('last_name', '', 'class="typehead form-control"'); ?>
+              <?php echo form_input('last_name', '', 'class="typeahead form-control"'); ?>
               <div class="invalid-feedback">
                 Input lastname
               </div>
@@ -185,4 +184,9 @@
       $("#ddate").css("margin-top", "0");
     }
   })
+</script>
+
+
+<script>
+$customers = <?php echo json_encode(to_names($customers)); ?>;
 </script>

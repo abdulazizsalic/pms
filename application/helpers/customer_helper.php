@@ -51,3 +51,11 @@ function to_name($customer) {
   }  
   return trim("$last_name, $first_name $middle_name");
 }
+
+function to_names($customers) {
+  $array = array();
+  foreach ($customers as $c) {
+    $array[] = to_name($c);
+  }
+  return $array;
+}

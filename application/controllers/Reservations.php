@@ -14,6 +14,7 @@ class Reservations extends CI_Controller {
     $this->load->model('reservation_model');
     $this->load->model('reservation_event_model');
     $this->load->model('reservation_unit_model');
+    $this->load->model('customer_model');
   }
   
   function index() {
@@ -40,7 +41,8 @@ class Reservations extends CI_Controller {
       $this->reservation_model->save($reservation);
       redirect('reservations');
     }
-    $this->layout->view('reservations/add');
+    $data['customers'] = $this->customer_model->find_active_by_type();
+    $this->layout->view('reservations/add', $data);
   }
 
   function edit($id) {

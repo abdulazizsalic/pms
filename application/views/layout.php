@@ -15,6 +15,8 @@
   <!-- Bootstrap Core CSS -->
   <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/plugins/icheck/skins/all.css" rel="stylesheet">
+  <!-- Typehead CSS -->
+  <link href="assets/plugins/typeahead.js-master/dist/typehead-min.css" rel="stylesheet">
   <!-- page CSS -->
   <link href="assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
   <!-- chartist CSS -->
@@ -630,6 +632,9 @@
   <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
   <!--Custom JavaScript -->
   <script src="js/custom.min.js"></script>
+  <!-- Typehead Plugin JavaScript -->
+  <script src="assets/plugins/typeahead.js-master/dist/typeahead.bundle.min.js"></script>
+  <script src="assets/plugins/typeahead.js-master/dist/typeahead-init.js"></script>  
   <!-- Calendar JavaScript -->
   <script src="assets/plugins/calendar/jquery-ui.min.js"></script>
   <script src="assets/plugins/moment/moment.js"></script>
