@@ -1,4 +1,6 @@
-# Property Management System
+# pms
+
+[![CircleCI](https://circleci.com/gh/shro0ms/pms.svg?style=svg)](https://circleci.com/gh/shro0ms/pms)
 
 ## Introduction
 
