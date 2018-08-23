@@ -52,9 +52,6 @@
       width: 100%;
       position: fixed;
       bottom: 0;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
     }
 
   </style>
